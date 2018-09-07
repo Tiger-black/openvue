@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <title>Demo Page 1</title>
+    <script src="../../c/common/rem.js" inline></script>
+    <link type="text/css" rel="stylesheet" href="./index.css" inline>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>ghjkl;bhnjk,./</h1>
+        <button v-on:click="handle">点点</button>
+        <todo-item v-bind:todo="list"
+        v-for="(item,index) in list"
+        v-bind:key="list.id"></todo-item>
+    </div>
+    
+ <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script> -->
+ <script src="../../c/vue/vue.js"></script>
+
+
+
+ <script>
+
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>这是个待办项{{todo[index]}}</li>'
+        })
+
+        new Vue({
+            el:'#app',
+            // template:' <h1>{{message}}</h1> ',
+			data:{
+                message: '页面加载于 ' + new Date().toLocaleString(),
+                list:[1,2,3,4]
+			},
+			methods: {
+			  handle: function () {
+					this.message = 'sdfghjkl'
+			  }
+			}
+        })
+        
+
+ </script>
+ <script type="text/javascript" src="@cdnhost/src/p/test/@version/index.js"></script>
+</body>
+</html>
